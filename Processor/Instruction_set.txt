@@ -1,0 +1,58 @@
+INSTRUCTION SET ARCHITECHTURE
+
+BITS [31:28] VALUES:
+
+1 -- ALU
+2 -- CONTROL
+4 -- MEM
+8 -- CONSTANT
+
+I.  ALU-BITS:
+
+    [27:24] -- OPCODE 4-bit
+    [23:19] -- Rsrc1_addr 5-bit 
+    [18:14] -- Rsrc2_addr 5-bit 
+    [13:9]  -- Rdst_addr 5-bit 
+
+    ALU-OpCode (Values):
+    0  -- ADD
+    1  -- SUB
+    2  -- MUL
+    3  -- ShL
+    4  -- ShR
+    5  -- RoL
+    6  -- RoR
+    7  -- AND
+    8  -- OR
+    9  -- NOR
+    10 -- NAND #Switched#
+    11 -- XOR
+    12 -- XNOR
+    13 -- NOT #Switched#
+    14 -- CMP
+    15 -- NEG
+
+II. CONTROL-BITS:
+    [27:25] -- OpCode 3-bit
+    [24:13] -- Address (only for BUN/BSA) 10-bit
+
+    CONTROL-OpCode
+    0  -- BUN
+    1  -- BSA
+    2  -- RET
+    3  -- HLT
+    4  -- SIZ
+    5  -- SNZ
+    6  -- SIV
+    7  -- SNV
+
+III. MEMORY REFERENCE-BITS
+    [27]    -- Write/Read 1-bit
+    [26:22] -- Reg Address 5-bit
+    [21:12] -- Data Mem Address 10-bit
+
+IV. FORCE CONSTANT-BITS
+    [27:23] -- Register Address 5-bit 
+    [22:7]  -- Constant Data 16-bit
+
+
